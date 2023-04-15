@@ -1,27 +1,16 @@
-# NextJS-Three-Template
+# Cell-Shade-Material
 
-A lightweight "ready-to-use" NextJS template for building [THREE.js](https://threejs.org/) projects.
+**✏️ NOTE: This is still being worked on (right now you can grab the shader code in `components/canvas/shaders/cellshade-material/` and use it how you like). I'll get around to making it an actual extendable material 😶‍🌫️**
 
-## What it includes
+A custom cell-shading material for [THREE.js](https://threejs.org/). A bit more fun then the toon shader material!
 
-* [react-three-fiber](https://github.com/pmndrs/react-three-fiber)
-* [react-three-drei](https://github.com/pmndrs/drei) -> Useful helpers
-* [glslify-loader](https://github.com/glslify/glslify-loader) -> Webpack loader module for `.glsl | .vs | .fs | .vert | .frag` files
-* [three-types](https://github.com/three-types/three-ts-types) -> TypeScript types for THREE
+## Features (in progress...)
 
-## How to Use
+⬛ Supports all lights
 
-**Clone and Install dependencies (only the first time)**
-``` bash
-npm install
-```
+⬛ Shadows
 
-**Run the local server at `localhost:3000`**
-```bash
-npm run dev
-```
+⬛ Controllable shading paramaters
 
-**Build for production**
-```bash
-npm run build
-```
+ 
+
