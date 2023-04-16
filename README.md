@@ -6,7 +6,7 @@ A custom cell-shading material for [THREE.js](https://threejs.org/). A bit more 
 
 ## Demo
 
-[![demo link](screenshots/demo.png)](https://cell-shade-material.vercel.app/)
+[![demo link](demo/screenshots/demo.png)](https://cell-shade-material.vercel.app/)
 
 ## Features (in progress...)
 
