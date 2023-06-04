@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment, useHelper } from "@react-three/drei";
+import { OrbitControls, useHelper } from "@react-three/drei";
 import { useControls } from "leva";
 import { DirectionalLightHelper } from "three";
 import { useRef } from "react"
@@ -27,14 +27,14 @@ function Lights(){
             <directionalLight ref={dirLight1} castShadow
                 position={[dirLightControl1.position.x, dirLightControl1.position.y, dirLightControl1.position.z]} 
                 color={dirLightControl1.color}
-                shadow-mapSize-height={2048} 
-                shadow-mapSize-width={2048} 
+                shadow-mapSize-height={512} 
+                shadow-mapSize-width={512} 
             />
             <directionalLight ref={dirLight2} castShadow
                 position={[dirLightControl2.position.x, dirLightControl2.position.y, dirLightControl2.position.z]} 
                 color={dirLightControl2.color} 
-                shadow-mapSize-height={2048} 
-                shadow-mapSize-width={2048}
+                shadow-mapSize-height={512} 
+                shadow-mapSize-width={512}
             />
         </>
     )
@@ -48,7 +48,6 @@ function Experience(){
         <div className="canvas-container">
             <Canvas camera={{position: [0,2,2]}} shadows='soft'>
                 <color attach="background" args={['#071416']} />
-                <Environment preset="dawn"/>
                 <ambientLight intensity={0.1} color={'white'}/>
                 <CellShade />
                 <Lights />

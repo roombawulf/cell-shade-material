@@ -22,6 +22,8 @@ vec3 calculateCellShading(DirectionalLight light, Geometry geo, float shadow){
     // Diffuse 
     vec3 lightingOut = vec3(0.0);
     float NdotL = dot(geo.normal, light.direction);
+
+    NdotL = floor(NdotL * 5.0) / 5.0;
     float lightIntensity = smoothstep(0.0, u_diffuseCell, NdotL * shadow);
     vec3 diffuseLight = light.color * lightIntensity;
 
@@ -33,7 +35,7 @@ vec3 calculateCellShading(DirectionalLight light, Geometry geo, float shadow){
     float specularIntensity = smoothstep(0.0, u_specularCell, specular);
     vec3 specularLight = light.color * specularIntensity;
 
-    lightingOut += diffuseLight + ambientLightColor + specularLight;
+    lightingOut += diffuseLight + specularLight;
     return lightingOut;
 }
 
@@ -68,8 +70,8 @@ void main() {
     vec3 lightColor1 = calculateCellShading(directionalLights[0], geo, shadow1);
     vec3 lightColor2 = calculateCellShading(directionalLights[1], geo, shadow2);
     lightFinalColor += lightColor1 + lightColor2;
-
-    lightFinalColor = floor(lightFinalColor * 5.0) / 5.0;
-
+    lightFinalColor += ambientLightColor;
     gl_FragColor = vec4(geo.color * (lightFinalColor), 1.0);
+
+    // gl_FragColor = vec4(vec3(shadow2 * shadow1), 1.0);
 }
